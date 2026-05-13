@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whole Foods · ABX Marketing Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Poppins', Helvetica, sans-serif; background: #F2F4F8; color: #000; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 32px 80px; }
+
+  .tabs { display: flex; gap: 4px; background: #fff; border-radius: 14px; padding: 6px; margin-bottom: 28px; border: 1px solid #D5D9E0; width: fit-content; }
+  .tab { padding: 10px 24px; border: none; background: transparent; font-family: inherit; font-size: 14px; font-weight: 500; color: #505658; border-radius: 10px; cursor: pointer; transition: all 0.15s ease; }
+  .tab:hover { color: #000; }
+  .tab.active { background: #000; color: #fff; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* HERO */
+  .hero { background: #000; color: #fff; border-radius: 24px; padding: 56px 48px; margin-bottom: 28px; position: relative; overflow: hidden; }
+  .hero-glow { position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, #0052F2 0%, rgba(0,82,242,0) 60%); pointer-events: none; }
+  .hero-glow-2 { position: absolute; bottom: -300px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, #A373FF 0%, rgba(163,115,255,0) 60%); pointer-events: none; opacity: 0.6; }
+  .hero-content { position: relative; z-index: 1; }
+  .logo-placeholder { width: 120px; height: 28px; background: rgba(255,255,255,0.1); border: 1px dashed rgba(255,255,255,0.3); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: rgba(255,255,255,0.5); margin-bottom: 32px; letter-spacing: 0.1em; }
+  .eyebrow { font-size: 12px; font-weight: 600; color: #4083FF; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; }
+  .hero h1 { font-size: 64px; font-weight: 700; line-height: 1.05; margin-bottom: 20px; letter-spacing: -0.02em; }
+  .hero h1 .accent { color: #4083FF; }
+  .hero-sub { font-size: 20px; color: rgba(255,255,255,0.7); max-width: 720px; margin-bottom: 36px; }
+  .hero-meta { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.15); }
+  .meta-item .label { font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .meta-item .value { font-size: 18px; font-weight: 600; color: #fff; }
+  .meta-item .value.blue { color: #4083FF; }
+
+  /* MY REMIT */
+  .remit { background: #fff; border: 1px solid #D5D9E0; border-radius: 16px; padding: 28px 32px; margin-bottom: 28px; }
+  .remit-label { font-size: 11px; color: #0052F2; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; }
+  .remit-headline { font-size: 22px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
+  .remit-headline strong { color: #0052F2; font-weight: 700; }
+
+  /* CAMPAIGN AT A GLANCE */
+  .glance { background: #fff; border: 1px solid #D5D9E0; border-radius: 20px; padding: 32px; margin-bottom: 28px; }
+  .glance-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  .glance-header .g-label { font-size: 11px; color: #0052F2; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; }
+  .glance-header h3 { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; margin-top: 4px; }
+  .glance-meta { font-size: 12px; color: #868D95; }
+  .glance-meta strong { color: #000; font-weight: 600; }
+
+  /* Track */
+  .glance-track { position: relative; padding: 12px 0 24px; }
+  .track-line { position: relative; height: 4px; background: linear-gradient(90deg, #0052F2 0%, #6980FF 30%, #A373FF 50%, #FF7D78 80%, #FFB100 100%); border-radius: 4px; margin-top: 8px; }
+  .track-phases { position: relative; display: grid; grid-template-columns: 13% 33% 15% 18% 14% 7%; gap: 4px; padding-top: 12px; }
+  .track-phase-band { height: 12px; border-radius: 4px; position: relative; }
+  .pb-1 { background: rgba(0,82,242,0.15); }
+  .pb-2 { background: rgba(105,128,255,0.18); }
+  .pb-3 { background: rgba(163,115,255,0.25); }
+  .pb-4 { background: rgba(255,125,120,0.18); }
+  .pb-5 { background: rgba(0,26,79,0.12); }
+  .pb-6 { background: rgba(255,177,0,0.22); }
+  .track-phase-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 8px; color: #505658; line-height: 1.3; }
+  .track-phase-label .pn { display: inline-block; width: 16px; height: 16px; line-height: 16px; text-align: center; border-radius: 50%; color: #fff; font-size: 9px; margin-right: 4px; vertical-align: middle; }
+  .pn-1 { background: #0052F2; }
+  .pn-2 { background: #6980FF; }
+  .pn-3 { background: #A373FF; }
+  .pn-4 { background: #6980FF; }
+  .pn-5 { background: #001A4F; }
+  .pn-6 { background: #FF7D78; color: #000; }
+  .track-phase-dates { font-size: 10px; color: #868D95; margin-top: 2px; font-weight: 500; }
+
+  /* Milestone markers */
+  .glance-milestones { position: relative; height: auto; min-height: 80px; }
+  .milestone { position: absolute; bottom: 0; transform: translateX(-50%); width: 100px; text-align: center; }
+  .milestone .m-date { font-size: 11px; font-weight: 700; color: #000; line-height: 1.3; margin-bottom: 2px; white-space: nowrap; }
+  .milestone .m-label { font-size: 9px; color: #505658; line-height: 1.35; margin-bottom: 8px; }
+  .milestone .m-dot { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid #0052F2; margin: 0 auto; position: relative; z-index: 2; }
+  .milestone.m-summit .m-dot { border-color: #A373FF; background: #A373FF; }
+  .milestone.m-close .m-dot { border-color: #FF7D78; background: #FF7D78; }
+
+  /* Marketing pulse rows */
+  .glance-pulse { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding-top: 24px; border-top: 1px solid #F2F4F8; align-items: start; }
+  .pulse-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #505658; padding-top: 6px; }
+  .pulse-bar { display: grid; grid-template-columns: 13% 33% 15% 18% 14% 7%; gap: 4px; }
+  .pulse-cell { min-height: 22px; padding: 3px 4px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: #fff; text-align: center; line-height: 1.2; }
+  .pc-on { background: #0052F2; }
+  .pc-peak { background: #A373FF; }
+  .pc-low { background: #C9D2DC; color: #505658; }
+  .pc-off { background: #F2F4F8; color: #C9D2DC; }
+  .pc-event { background: linear-gradient(135deg, #A373FF 0%, #6980FF 100%); }
+  .pc-spike { background: linear-gradient(90deg, #6980FF 0%, #A373FF 100%); }
+
+  /* Key moments inline */
+  .glance-moments { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #F2F4F8; }
+  .moment { background: #F8F9FB; border-radius: 12px; padding: 14px 16px; }
+  .moment .m-icon { width: 32px; height: 32px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+  .moment .m-icon .material-symbols-rounded { color: #0052F2; font-variation-settings: 'wght' 300, 'FILL' 0; font-size: 18px; }
+  .moment.m-violet .m-icon .material-symbols-rounded { color: #A373FF; }
+  .moment.m-pink .m-icon .material-symbols-rounded { color: #FF7D78; }
+  .moment.m-amber .m-icon .material-symbols-rounded { color: #FFB100; }
+  .moment .m-title { font-size: 12px; font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
+  .moment .m-sub { font-size: 11px; color: #868D95; line-height: 1.4; }
+
+  /* SECTION HEADER */
+  .section-header { margin: 56px 0 24px; }
+  .section-header .num { display: inline-block; font-size: 12px; font-weight: 600; color: #0052F2; letter-spacing: 0.12em; margin-bottom: 8px; text-transform: uppercase; }
+  .section-header h2 { font-size: 36px; font-weight: 600; letter-spacing: -0.01em; color: #000; }
+  .section-header .lead { font-size: 16px; color: #505658; margin-top: 8px; max-width: 760px; }
+
+  /* CREATIVE CONCEPT CARD */
+  .theme-card { background: linear-gradient(135deg, #0052F2 0%, #001A4F 100%); color: #fff; border-radius: 20px; padding: 44px 48px; position: relative; overflow: hidden; }
+  .theme-card::before { content: ''; position: absolute; top: -200px; right: -200px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(163,115,255,0.45) 0%, transparent 60%); pointer-events: none; }
+  .theme-card::after { content: ''; position: absolute; bottom: -250px; left: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(64,131,255,0.25) 0%, transparent 60%); pointer-events: none; }
+
+  .theme-top { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 36px; position: relative; }
+  .theme-top-left .theme-eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: #4083FF; margin-bottom: 14px; }
+  .theme-headline { font-size: 56px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+  .theme-headline .gradient-text { background: linear-gradient(90deg, #fff 0%, #A373FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .theme-sub { font-size: 16px; color: rgba(255,255,255,0.78); line-height: 1.6; }
+  .theme-sub strong { color: #fff; font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(163,115,255,0.4) 60%); padding: 0 2px; }
+
+  /* Pillar progression */
+  .theme-progression { position: relative; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.12); }
+  .theme-progression-label { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 18px; text-align: center; }
+  .theme-grid { display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr; gap: 0; position: relative; align-items: stretch; }
+
+  .theme-pillar { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 22px 22px 24px; position: relative; transition: transform 0.2s ease; backdrop-filter: blur(6px); }
+  .theme-pillar:hover { transform: translateY(-2px); }
+  .theme-pillar .p-num { position: absolute; top: -14px; left: 22px; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+  .theme-pillar.p1 .p-num { background: #4083FF; color: #fff; }
+  .theme-pillar.p2 .p-num { background: #A373FF; color: #fff; }
+  .theme-pillar.p3 .p-num { background: #FFB100; color: #000; }
+  .theme-pillar .p-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 6px; margin-bottom: 10px; }
+  .theme-pillar.p1 .p-label { color: #4083FF; }
+  .theme-pillar.p2 .p-label { color: #A373FF; }
+  .theme-pillar.p3 .p-label { color: #FFB100; }
+  .theme-pillar .p-line { font-size: 18px; font-weight: 600; color: #fff; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .theme-pillar .p-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); }
+
+  /* Arrow between pillars */
+  .pillar-arrow { display: flex; align-items: center; justify-content: center; }
+  .pillar-arrow .material-symbols-rounded { color: rgba(255,255,255,0.35); font-variation-settings: 'wght' 200, 'FILL' 0; font-size: 20px; }
+
+  /* AUDIENCE */
+  .audience { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .audience-row { background: #fff; border: 1px solid #D5D9E0; border-radius: 16px; padding: 24px 28px; display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: start; }
+  .audience-tag { font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 100px; display: inline-block; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .at-1 { background: #0052F2; color: #fff; }
+  .at-2 { background: #6980FF; color: #fff; }
+  .at-3 { background: #A373FF; color: #fff; }
+  .audience-row .count { font-size: 36px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+  .audience-row .count-sub { font-size: 12px; color: #868D95; margin-top: 4px; }
+  .audience-row h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .audience-row .who { font-size: 13px; color: #505658; line-height: 1.6; margin-bottom: 12px; }
+  .audience-row .who strong { color: #000; font-weight: 600; }
+  .ad-copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ad-creative { background: #F2F4F8; border-left: 3px solid #0052F2; padding: 14px 16px; border-radius: 0 8px 8px 0; }
+  .ad-creative .ad-label { font-size: 10px; font-weight: 600; color: #0052F2; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .ad-creative .ad-body { font-size: 13px; font-style: italic; color: #373D42; line-height: 1.55; }
+
+  /* CHANNEL DEEP DIVE */
+  .channel-detail { background: #fff; border: 1px solid #D5D9E0; border-radius: 16px; padding: 28px; margin-bottom: 14px; }
+  .channel-detail .ch-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #F2F4F8; }
+  .channel-detail .ch-icon { width: 44px; height: 44px; background: #F2F4F8; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .channel-detail .ch-icon .material-symbols-rounded { color: #0052F2; font-variation-settings: 'wght' 300, 'FILL' 0; font-size: 24px; }
+  .channel-detail .ch-name { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+  .channel-detail .ch-tag { font-size: 11px; color: #868D95; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .channel-detail .ch-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .channel-detail .ch-col h5 { font-size: 11px; font-weight: 600; color: #868D95; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .channel-detail .ch-col ul { list-style: none; }
+  .channel-detail .ch-col li { font-size: 13px; padding: 4px 0; color: #000; line-height: 1.55; display: flex; gap: 8px; }
+  .channel-detail .ch-col li::before { content: '·'; color: #0052F2; font-weight: 700; }
+
+  /* CONTENT DROPS */
+  .drops { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .drop { background: #fff; border: 1px solid #D5D9E0; border-radius: 16px; padding: 22px 24px; }
+  .drop .d-type { font-size: 10px; font-weight: 600; color: #fff; padding: 3px 9px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 10px; }
+  .drop .d-type.brief { background: #0052F2; }
+  .drop .d-type.doc { background: #6980FF; }
+  .drop .d-type.exp { background: #A373FF; }
+  .drop .d-type.dm { background: #FF7D78; color: #000; }
+  .drop .d-type.event { background: #000; }
+  .drop h4 { font-size: 17px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .drop .d-desc { font-size: 13px; color: #505658; line-height: 1.55; margin-bottom: 12px; }
+  .drop .d-meta { font-size: 12px; color: #868D95; display: flex; gap: 14px; padding-top: 12px; border-top: 1px solid #F2F4F8; }
+  .drop .d-meta span { display: inline-flex; align-items: center; gap: 4px; }
+  .drop .d-meta .material-symbols-rounded { font-variation-settings: 'wght' 300, 'FILL' 0; font-size: 14px; }
+
+  /* CALENDAR */
+  .calendar { background: #fff; border: 1px solid #D5D9E0; border-radius: 20px; padding: 8px; }
+  .cal-row { display: grid; grid-template-columns: 110px 1fr 220px; gap: 20px; padding: 18px 24px; align-items: start; }
+  .cal-row + .cal-row { border-top: 1px solid #F2F4F8; }
+  .cal-row.header { background: #F2F4F8; padding: 12px 24px; border-radius: 12px; }
+  .cal-row.header div { font-size: 10px; font-weight: 600; color: #505658; text-transform: uppercase; letter-spacing: 0.1em; }
+  .cal-date { font-size: 13px; font-weight: 600; color: #0052F2; }
+  .cal-date .sub { font-size: 11px; color: #868D95; font-weight: 500; margin-top: 2px; }
+  .cal-content h5 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .cal-content p { font-size: 12px; color: #505658; line-height: 1.5; }
+  .cal-content p strong { color: #000; font-weight: 600; }
+  .cal-channel { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ch-pill { font-size: 10px; font-weight: 500; background: #F2F4F8; color: #000; padding: 4px 8px; border-radius: 100px; display: inline-flex; align-items: center; gap: 4px; }
+  .ch-pill .material-symbols-rounded { font-variation-settings: 'wght' 300, 'FILL' 0; font-size: 12px; color: #0052F2; }
+  .cal-row.summit-row { background: linear-gradient(90deg, rgba(0,82,242,0.04) 0%, rgba(163,115,255,0.04) 100%); border-radius: 12px; }
+  .cal-row.close-row { background: linear-gradient(90deg, rgba(255,125,120,0.06) 0%, rgba(255,177,0,0.06) 100%); border-radius: 12px; }
+
+  /* SUMMIT */
+  .summit-card { background: #000; color: #fff; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; }
+  .summit-glow { position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(163,115,255,0.5) 0%, transparent 60%); }
+  .summit-glow-2 { position: absolute; bottom: -150px; left: -50px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(0,82,242,0.5) 0%, transparent 60%); }
+  .summit-content { position: relative; z-index: 1; }
+  .summit-card .eyebrow { color: #A373FF; margin-bottom: 8px; }
+  .summit-card h3 { font-size: 32px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .summit-date { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+  .summit-talk { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 20px 24px; margin-bottom: 20px; }
+  .summit-talk .talk-eyebrow { font-size: 11px; font-weight: 600; color: #4083FF; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .summit-talk .talk-title { font-size: 20px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .summit-talk .talk-speakers { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+  .summit-talk .talk-speakers strong { color: #fff; font-weight: 600; }
+  .summit-mkt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .summit-mkt { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 18px 20px; }
+  .summit-mkt h6 { font-size: 11px; font-weight: 600; color: #4083FF; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .summit-mkt p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.55; }
+
+  /* COMMITTEE COVERAGE */
+  .coverage { background: #fff; border: 1px solid #D5D9E0; border-radius: 16px; overflow: hidden; }
+  .cov-row { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 24px; padding: 18px 28px; align-items: start; }
+  .cov-row + .cov-row { border-top: 1px solid #F2F4F8; }
+  .cov-row.header { background: #F2F4F8; padding: 12px 28px; }
+  .cov-row.header div { font-size: 10px; font-weight: 600; color: #505658; text-transform: uppercase; letter-spacing: 0.1em; }
+  .cov-person .name { font-size: 14px; font-weight: 600; }
+  .cov-person .role { font-size: 11px; color: #868D95; margin-top: 2px; }
+  .cov-touch { font-size: 12px; color: #373D42; line-height: 1.6; }
+  .cov-touch strong { color: #000; font-weight: 600; }
+
+  /* SUCCESS / KPI */
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpi { background: #fff; border: 1px solid #D5D9E0; border-radius: 16px; padding: 22px; border-top: 4px solid #0052F2; }
+  .kpi .num { font-size: 32px; font-weight: 700; color: #0052F2; line-height: 1; letter-spacing: -0.03em; margin-bottom: 8px; }
+  .kpi .label { font-size: 13px; font-weight: 600; color: #000; margin-bottom: 4px; }
+  .kpi .sub { font-size: 12px; color: #868D95; line-height: 1.5; }
+  .kpi.violet { border-top-color: #A373FF; } .kpi.violet .num { color: #A373FF; }
+  .kpi.lilac { border-top-color: #6980FF; } .kpi.lilac .num { color: #6980FF; }
+  .kpi.pink { border-top-color: #FF7D78; } .kpi.pink .num { color: #FF7D78; }
+
+  /* PTO BANNER */
+  .pto-banner { background: #FFF4F4; border: 2px solid #F23845; border-radius: 16px; padding: 22px 28px; margin: 32px 0; display: flex; gap: 20px; align-items: flex-start; }
+  .pto-banner .icon-wrap { width: 44px; height: 44px; background: #F23845; color: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .pto-banner .icon-wrap .material-symbols-rounded { font-variation-settings: 'wght' 300, 'FILL' 0; font-size: 26px; }
+  .pto-banner h3 { font-size: 17px; font-weight: 600; color: #F23845; margin-bottom: 4px; }
+  .pto-banner p { font-size: 13px; color: #373D42; line-height: 1.6; }
+
+  /* POST-SALES */
+  .post-sales-hero { background: linear-gradient(135deg, #001A4F 0%, #000 100%); }
+  .stage { background: #fff; border-radius: 16px; padding: 24px 28px; border: 1px solid #D5D9E0; margin-bottom: 14px; }
+  .stage-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 10px; }
+  .stage-period { font-size: 11px; font-weight: 600; color: #0052F2; text-transform: uppercase; letter-spacing: 0.1em; }
+  .stage-head h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+  .stage-desc { font-size: 13px; color: #505658; line-height: 1.55; margin-bottom: 14px; }
+  .stage-drops { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stage-drop { font-size: 12px; padding: 10px 12px; background: #F2F4F8; border-radius: 8px; line-height: 1.5; display: flex; gap: 8px; }
+  .stage-drop .material-symbols-rounded { font-variation-settings: 'wght' 300, 'FILL' 0; font-size: 16px; color: #0052F2; flex-shrink: 0; }
+  .stage-drop strong { color: #000; font-weight: 600; }
+
+  /* FOOTER */
+  .footer { margin-top: 56px; padding: 28px 32px; background: #fff; border-radius: 16px; border: 1px solid #D5D9E0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #505658; margin-bottom: 12px; }
+  .footer ul { list-style: none; }
+  .footer li { font-size: 13px; padding: 5px 0; color: #000; display: flex; gap: 8px; line-height: 1.5; }
+  .footer li::before { content: '→'; color: #0052F2; flex-shrink: 0; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 40px; }
+    .theme-headline { font-size: 36px; }
+    .theme-top { grid-template-columns: 1fr; gap: 20px; }
+    .theme-grid { grid-template-columns: 1fr; gap: 12px; }
+    .pillar-arrow { display: none; }
+    .kpis { grid-template-columns: 1fr 1fr; }
+    .drops, .ad-copy-grid, .stage-drops, .summit-mkt-grid { grid-template-columns: 1fr; }
+    .audience-row, .cal-row, .cov-row, .channel-detail .ch-grid, .footer { grid-template-columns: 1fr; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('presales', this)">Pre-sales · Marketing through close</button>
+    <button class="tab" onclick="switchTab('postsales', this)">Post-sales · Marketing through expansion</button>
+  </div>
+
+  <!-- ====================== PRE-SALES ====================== -->
+  <div class="tab-panel active" id="presales">
+
+    <div class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-content">
+        <div class="logo-placeholder">AMPLITUDE LOGO</div>
+        <!-- TODO: Replace with official Amplitude logo from brand.amplitude.com -->
+        <div class="eyebrow">ABX Marketing Plan · Whole Foods Market</div>
+        <h1>From foundation<br>to <span class="accent">flywheel.</span></h1>
+        <p class="hero-sub">A multi-channel marketing motion to surround the Whole Foods deal cycle from May 20 through Oct 15 close — creating air cover, accelerating the moments that matter, and never letting up.</p>
+        <div class="hero-meta">
+          <div class="meta-item"><div class="label">Deal</div><div class="value blue">$500K New ARR</div></div>
+          <div class="meta-item"><div class="label">Close</div><div class="value">Oct 15, 2026</div></div>
+          <div class="meta-item"><div class="label">Anchor event</div><div class="value">Amazon MarTech Summit · 7/7–9</div></div>
+          <div class="meta-item"><div class="label">Marketing lead</div><div class="value">Shab Jahan</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETING REMIT -->
+    <div class="remit">
+      <div class="remit-label">My remit on this deal</div>
+      <div class="remit-headline">Robyn and Jay own the sales motion. <strong>Marketing surrounds it</strong> — Influ2 air cover, content drops timed to MAP milestones, summit experience design, and post-sales reference development. Every dollar of marketing investment is tied to a specific deal moment.</div>
+    </div>
+
+    <!-- CAMPAIGN AT A GLANCE -->
+    <div class="glance">
+      <div class="glance-header">
+        <div>
+          <div class="g-label">Campaign at a glance</div>
+          <h3>21 weeks · 6 phases · 1 close</h3>
+        </div>
+        <div class="glance-meta">
+          <strong>May 20, 2026</strong> → <strong>Oct 15, 2026</strong>
+        </div>
+      </div>
+
+      <!-- Track with milestones -->
+      <div class="glance-track">
+
+        <!-- Milestone markers above the line -->
+        <div class="glance-milestones">
+          <div class="milestone" style="left: 4%;">
+            <div class="m-date">5/19</div>
+            <div class="m-label">POC criteria<br>+ VP engagement</div>
+            <div class="m-dot"></div>
+          </div>
+          <div class="milestone m-summit" style="left: 33%;">
+            <div class="m-date">7/7–9</div>
+            <div class="m-label">Summit</div>
+            <div class="m-dot"></div>
+          </div>
+          <div class="milestone" style="left: 46%;">
+            <div class="m-date">7/20–7/27</div>
+            <div class="m-label">POC + readout</div>
+            <div class="m-dot"></div>
+          </div>
+          <div class="milestone" style="left: 66%;">
+            <div class="m-date">8/20–9/1</div>
+            <div class="m-label">Proposal + DM review</div>
+            <div class="m-dot"></div>
+          </div>
+          <div class="milestone" style="left: 80%;">
+            <div class="m-date">9/15</div>
+            <div class="m-label">Vendor decision</div>
+            <div class="m-dot"></div>
+          </div>
+          <div class="milestone m-close" style="left: 96%;">
+            <div class="m-date">10/15</div>
+            <div class="m-label">Signature</div>
+            <div class="m-dot"></div>
+          </div>
+        </div>
+
+        <!-- The gradient line -->
+        <div class="track-line"></div>
+
+        <!-- Phase bands below the line -->
+        <div class="track-phases">
+          <div>
+            <div class="track-phase-band pb-1"></div>
+            <div class="track-phase-label"><span class="pn pn-1">1</span>Foundation</div>
+            <div class="track-phase-dates">May 20 – Jun 7</div>
+          </div>
+          <div>
+            <div class="track-phase-band pb-2"></div>
+            <div class="track-phase-label"><span class="pn pn-2">2</span>POC + summit</div>
+            <div class="track-phase-dates">Jun 8 – Jul 27</div>
+          </div>
+          <div>
+            <div class="track-phase-band pb-3"></div>
+            <div class="track-phase-label"><span class="pn pn-3">3</span>Business case</div>
+            <div class="track-phase-dates">Jul 28 – Aug 19</div>
+          </div>
+          <div>
+            <div class="track-phase-band pb-4"></div>
+            <div class="track-phase-label"><span class="pn pn-4">4</span>Proposal</div>
+            <div class="track-phase-dates">Aug 20 – Sep 14</div>
+          </div>
+          <div>
+            <div class="track-phase-band pb-5"></div>
+            <div class="track-phase-label"><span class="pn pn-5">5</span>Procurement</div>
+            <div class="track-phase-dates">Sep 15 – Oct 5</div>
+          </div>
+          <div>
+            <div class="track-phase-band pb-6"></div>
+            <div class="track-phase-label"><span class="pn pn-6">6</span>Close</div>
+            <div class="track-phase-dates">Oct 6 – Oct 15</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marketing pulse: when each channel is active by phase -->
+      <div class="glance-pulse">
+        <div class="pulse-label">Influ2 · T1</div>
+        <div class="pulse-bar">
+          <div class="pulse-cell pc-on">On</div>
+          <div class="pulse-cell pc-peak">Peak</div>
+          <div class="pulse-cell pc-on">On</div>
+          <div class="pulse-cell pc-on">On</div>
+          <div class="pulse-cell pc-low">Low</div>
+          <div class="pulse-cell pc-on">On</div>
+        </div>
+      </div>
+
+      <div class="glance-pulse" style="border-top: none; padding-top: 8px;">
+        <div class="pulse-label">Influ2 · T2/T3</div>
+        <div class="pulse-bar">
+          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-peak">Peak</div>
+          <div class="pulse-cell pc-on">On</div>
+          <div class="pulse-cell pc-on">On</div>
+          <div class="pulse-cell pc-low">Low</div>
+          <div class="pulse-cell pc-off">—</div>
+        </div>
+      </div>
+
+      <div class="glance-pulse" style="border-top: none; padding-top: 8px;">
+        <div class="pulse-label">Gift + QR</div>
+        <div class="pulse-bar">
+          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-spike">6/16</div>
+          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-spike">8/25</div>
+          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-off">—</div>
+        </div>
+      </div>
+
+      <div class="glance-pulse" style="border-top: none; padding-top: 8px;">
+        <div class="pulse-label">Content drops</div>
+        <div class="pulse-bar">
+          <div class="pulse-cell pc-on">3 drops</div>
+          <div class="pulse-cell pc-peak">3 drops</div>
+          <div class="pulse-cell pc-on">2 drops</div>
+          <div class="pulse-cell pc-low">Nurture</div>
+          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-spike">Win</div>
+        </div>
+      </div>
+
+      <div class="glance-pulse" style="border-top: none; padding-top: 8px;">
+        <div class="pulse-label">In-person</div>
+        <div class="pulse-bar">
+          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-event">Summit</div>
+          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-event">Dinner</div>
+          <div class="pulse-cell pc-off">—</div>
+        </div>
+      </div>
+
+      <!-- Key moments below -->
+      <div class="glance-moments">
+        <div class="moment">
+          <div class="m-icon"><span class="material-symbols-rounded">redeem</span></div>
+          <div class="m-title">Personalized gifting</div>
+          <div class="m-sub">Sustainability-led · 2 sends · QR to digital briefs</div>
+        </div>
+        <div class="moment m-violet">
+          <div class="m-icon"><span class="material-symbols-rounded">smart_display</span></div>
+          <div class="m-title">Summit anchor moment</div>
+          <div class="m-sub">Ted + Elizabeth · main stage · WFM dinner</div>
+        </div>
+        <div class="moment m-pink">
+          <div class="m-icon"><span class="material-symbols-rounded">ads_click</span></div>
+          <div class="m-title">Always-on Influ2</div>
+          <div class="m-sub">3 tiers · ~58 contacts surrounded</div>
+        </div>
+        <div class="moment m-amber">
+          <div class="m-icon"><span class="material-symbols-rounded">emoji_events</span></div>
+          <div class="m-title">Close + reference rights</div>
+          <div class="m-sub">$500K signed · marketing rights secured</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREATIVE CONCEPT -->
+    <div class="section-header">
+      <div class="num">01 · The creative concept</div>
+      <h2>One theme, three message pillars</h2>
+      <p class="lead">All marketing creative ladders to a single positioning. Each pillar maps to a different MAP milestone so the message evolves as the deal advances.</p>
+    </div>
+    <div class="theme-card">
+      <div class="theme-top">
+        <div class="theme-top-left">
+          <div class="theme-eyebrow">Positioning · single line</div>
+          <div class="theme-headline">From foundation<br>to <span class="gradient-text">flywheel.</span></div>
+        </div>
+        <div class="theme-top-right">
+          <p class="theme-sub">Whole Foods has the demand, the redesign window, and the Amazon platform. The next unlock is a <strong>trusted self-serve analytics foundation</strong> that powers single cart, retail media attribution, and personalization on repeat — without slowing the team down.</p>
+        </div>
+      </div>
+
+      <div class="theme-progression">
+        <div class="theme-progression-label">Three message pillars · each maps to a MAP milestone</div>
+        <div class="theme-grid">
+          <div class="theme-pillar p1">
+            <div class="p-num">1</div>
+            <div class="p-label">Foundation</div>
+            <div class="p-line">Built for PMs, not ticket queues.</div>
+            <div class="p-desc">Influ2 Tier 2 · migration brief · Phase 1 content</div>
+          </div>
+          <div class="pillar-arrow"><span class="material-symbols-rounded">chevron_right</span></div>
+          <div class="theme-pillar p2">
+            <div class="p-num">2</div>
+            <div class="p-label">Proof</div>
+            <div class="p-line">Already trusted across Amazon.</div>
+            <div class="p-desc">Tier 1 Influ2 · Amit briefing doc · summit dinner narrative</div>
+          </div>
+          <div class="pillar-arrow"><span class="material-symbols-rounded">chevron_right</span></div>
+          <div class="theme-pillar p3">
+            <div class="p-num">3</div>
+            <div class="p-label">Flywheel</div>
+            <div class="p-line">From fragmented signals to full-funnel clarity.</div>
+            <div class="p-desc">Tier 3 Influ2 · summit demo · post-summit content</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIENCE -->
+    <div class="section-header">
+      <div class="num">02 · Audience targeting</div>
+      <h2>Three Influ2 tiers</h2>
+      <p class="lead">Three audience segments running in parallel across the full campaign. Tier 1 stays on throughout; Tiers 2 and 3 ramp into the summit and peak around the 7/7–9 main stage moment.</p>
+    </div>
+
+    <div class="audience">
+      <div class="audience-row">
+        <div>
+          <span class="audience-tag at-1">Tier 1 · Named</span>
+          <div class="count">3</div>
+          <div class="count-sub">contacts · always on</div>
+        </div>
+        <div>
+          <h4>Personal, conversational, summit-anchored</h4>
+          <p class="who"><strong>Amit, Josh, Vince.</strong> Hyper-personalized creative referencing the POC, the Amazon proof, and the summit. Frequency cap 3 per week.</p>
+          <div class="ad-copy-grid">
+            <div class="ad-creative">
+              <div class="ad-label">Ad A · Pre-POC (May)</div>
+              <div class="ad-body">"Whole Foods is at an inflection point. Here's what a trusted self-serve analytics foundation looks like — and how Music + Ring got there."</div>
+            </div>
+            <div class="ad-creative">
+              <div class="ad-label">Ad B · Summit (Jun–Jul)</div>
+              <div class="ad-body">"See you at the Amazon MarTech Summit, July 7–9. Ted + Elizabeth on the main stage."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="audience-row">
+        <div>
+          <span class="audience-tag at-2">Tier 2 · Product</span>
+          <div class="count">~25</div>
+          <div class="count-sub">PMs, analysts, UX</div>
+        </div>
+        <div>
+          <h4>Self-serve analytics value prop</h4>
+          <p class="who">Product managers, product analysts, UX research at WFM. Frequency cap 2 per week. Goal: bottom-up validation when Josh socializes Amplitude internally.</p>
+          <div class="ad-copy-grid">
+            <div class="ad-creative">
+              <div class="ad-label">Ad A · Workflow pain</div>
+              <div class="ad-body">"Built for PMs, not ticket queues. See how self-serve product analytics powers faster decisions on the redesign."</div>
+            </div>
+            <div class="ad-creative">
+              <div class="ad-label">Ad B · Outcome focused</div>
+              <div class="ad-body">"From the question to the answer in 10 minutes — not 10 days. Amplitude for product teams who decide fast."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="audience-row">
+        <div>
+          <span class="audience-tag at-3">Tier 3 · Marketing</span>
+          <div class="count">~30</div>
+          <div class="count-sub">campaign, analysts, data sci</div>
+        </div>
+        <div>
+          <h4>Summit-anchored, GenAI angle</h4>
+          <p class="who">Marketing analysts, campaign managers, digital marketing leads, marketing data science. Frequency cap 2 per week. Goal: drive summit registrations.</p>
+          <div class="ad-copy-grid">
+            <div class="ad-creative">
+              <div class="ad-label">Ad A · Summit demo</div>
+              <div class="ad-body">"From fragmented signals to full-funnel clarity. Live demo with Amazon Music Marketing — Amazon MarTech Summit, July 7–9."</div>
+            </div>
+            <div class="ad-creative">
+              <div class="ad-label">Ad B · Post-summit</div>
+              <div class="ad-body">"AI-accelerated campaign performance — the playbook Music is running. Get the recap from the Seattle session."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pto-banner">
+      <div class="icon-wrap"><span class="material-symbols-rounded">event_busy</span></div>
+      <div>
+        <h3>Marketing runs through the PTO window</h3>
+        <p>Josh asked Robyn and Jay not to meet with others during his 2-week PTO. That's a sales rule, not a marketing rule. Influ2 stays live, summit invites go out, content drops continue. Brand presence does not pause.</p>
+      </div>
+    </div>
+
+    <!-- CHANNEL DEEP DIVE -->
+    <div class="section-header">
+      <div class="num">03 · Channel playbook</div>
+      <h2>How each channel works</h2>
+      <p class="lead">Six channels, each with a defined role, message, and cadence. Built to compound, not compete.</p>
+    </div>
+
+    <div class="channel-detail">
+      <div class="ch-header">
+        <div class="ch-icon"><span class="material-symbols-rounded">ads_click</span></div>
+        <div>
+          <div class="ch-name">Influ2 · 1:1 LinkedIn ads</div>
+          <div class="ch-tag">Always on · the campaign's heartbeat</div>
+        </div>
+      </div>
+      <div class="ch-grid">
+        <div class="ch-col">
+          <h5>What it does</h5>
+          <ul>
+            <li>Surrounds the buying committee in their feed</li>
+            <li>Activates Product + Marketing as bottom-up validators</li>
+            <li>Drives summit registration</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Cadence</h5>
+          <ul>
+            <li>Phase 1: Tier 1 only (May 20 – Jun 7)</li>
+            <li>Phase 2: All tiers ramp (Jun 8 – Jul 9)</li>
+            <li>Phase 3: Peak through summit (Jul 7 – Jul 27)</li>
+            <li>Phase 4: Maintenance to close (Jul 28 – Oct 15)</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Owners</h5>
+          <ul>
+            <li>Ellen: creative + audience build</li>
+            <li>Shab: tracking + weekly reporting</li>
+            <li>Shab: approval + tier strategy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-detail">
+      <div class="ch-header">
+        <div class="ch-icon"><span class="material-symbols-rounded">redeem</span></div>
+        <div>
+          <div class="ch-name">Direct mail · personalized gifting</div>
+          <div class="ch-tag">Tier 1 · sustainability-conscious · low-footprint</div>
+        </div>
+      </div>
+      <div class="ch-grid">
+        <div class="ch-col">
+          <h5>Gift 1 · Amit</h5>
+          <ul>
+            <li>Personalized via ABX Dossier profile</li>
+            <li>Lands week of 6/16</li>
+            <li>Pairs with QR → exec brief PDF</li>
+            <li>Music + Ring playbook digital asset</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Gift 2 · Vince</h5>
+          <ul>
+            <li>Personalized via ABX Dossier profile</li>
+            <li>Lands week of 8/25 · pre-9/1 DM review</li>
+            <li>Pairs with QR → migration brief PDF</li>
+            <li>Sustainability-led gift selection</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Owners</h5>
+          <ul>
+            <li>Shab owns Dossier profile review</li>
+            <li>Shab owns gift selection + fulfillment</li>
+            <li>SE drafts migration brief content (digital)</li>
+            <li>Robyn drafts exec brief content (digital)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-detail">
+      <div class="ch-header">
+        <div class="ch-icon"><span class="material-symbols-rounded">smart_display</span></div>
+        <div>
+          <div class="ch-name">Summit experience · the anchor event</div>
+          <div class="ch-tag">July 7–9 Seattle · the campaign's center of gravity</div>
+        </div>
+      </div>
+      <div class="ch-grid">
+        <div class="ch-col">
+          <h5>What we own</h5>
+          <ul>
+            <li>Ted + Elizabeth main stage demo</li>
+            <li>Booth time reserved for Vince's team</li>
+            <li>WFM + Music working dinner night 1</li>
+            <li>Pre-summit 1:1 invitations</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Marketing deliverables</h5>
+          <ul>
+            <li>Summit landing page + invite flow</li>
+            <li>Demo trailer video (60 sec, week before)</li>
+            <li>Dinner invitation + venue branding</li>
+            <li>Post-summit recap content for Tier 3</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Owners</h5>
+          <ul>
+            <li>Field events: logistics + booth + dinner</li>
+            <li>Shab: invite flow + landing page</li>
+            <li>Shab: post-summit content + recap</li>
+            <li>Ted Sfikas: demo delivery</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-detail">
+      <div class="ch-header">
+        <div class="ch-icon"><span class="material-symbols-rounded">restaurant</span></div>
+        <div>
+          <div class="ch-name">Dinner 1 · WFM + Music · Seattle · summit night 1</div>
+          <div class="ch-tag">12-person curated working dinner · 7/7</div>
+        </div>
+      </div>
+      <div class="ch-grid">
+        <div class="ch-col">
+          <h5>The guest list</h5>
+          <ul>
+            <li>WFM: Amit, Josh, Vince + 2 VPs</li>
+            <li>Amazon Music: Elizabeth Thach + 1</li>
+            <li>Amplitude: Ted Sfikas, Robyn, Jay</li>
+            <li>Optional: customer reference (Ring)</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>The structured moment</h5>
+          <ul>
+            <li>Elizabeth Thach 5-min lightning talk</li>
+            <li>Roundtable on flywheel playbook</li>
+            <li>No deck, no pitch, no ask</li>
+            <li>Goal: turn proof into peer endorsement</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Owners</h5>
+          <ul>
+            <li>Field events: venue + logistics</li>
+            <li>Robyn: invite list approval</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-detail">
+      <div class="ch-header">
+        <div class="ch-icon"><span class="material-symbols-rounded">restaurant</span></div>
+        <div>
+          <div class="ch-name">Dinner 2 · WFM + procurement · Austin or Seattle · week of 9/22</div>
+          <div class="ch-tag">8-person 1:1 dinner · mid-procurement coalition moment</div>
+        </div>
+      </div>
+      <div class="ch-grid">
+        <div class="ch-col">
+          <h5>The guest list</h5>
+          <ul>
+            <li>WFM: Josh, Vince, Manmeet</li>
+            <li>Amazon: Amit + Amazon procurement lead</li>
+            <li>Amplitude: Robyn, Jay, Shab</li>
+            <li>Optional: Music or Ring eng lead</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>The structured moment</h5>
+          <ul>
+            <li>Music/Ring eng lead shares "how the paper worked"</li>
+            <li>Procurement-to-procurement open Q&amp;A</li>
+            <li>De-risk security + MSA path in person</li>
+            <li>Goal: remove procurement friction before close</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Owners</h5>
+          <ul>
+            <li>Field events: venue + logistics</li>
+            <li>Shab: procurement contact confirmation</li>
+            <li>Robyn: invite + agenda approval</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-detail">
+      <div class="ch-header">
+        <div class="ch-icon"><span class="material-symbols-rounded">article</span></div>
+        <div>
+          <div class="ch-name">Content drops · custom assets timed to MAP</div>
+          <div class="ch-tag">5 high-touch pieces tied to specific milestones</div>
+        </div>
+      </div>
+      <div class="ch-grid">
+        <div class="ch-col">
+          <h5>Built for the deal</h5>
+          <ul>
+            <li>Refmarkers migration brief (8pp)</li>
+            <li>Amit briefing doc — Music/Ring playbook (2pp)</li>
+            <li>POC scope explainer one-pager</li>
+            <li>Web Labs + Amplitude coexistence ref arch</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Built for the summit</h5>
+          <ul>
+            <li>Demo trailer video (60 sec)</li>
+            <li>Session recap blog + LinkedIn post</li>
+            <li>"From fragmented signals" white paper</li>
+            <li>Post-summit Tier 3 email nurture</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Owners</h5>
+          <ul>
+            <li>SE owns technical content</li>
+            <li>Robyn owns commercial framing</li>
+            <li>Shab owns production + design</li>
+            <li>Brand team reviews pre-publish</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-detail">
+      <div class="ch-header">
+        <div class="ch-icon"><span class="material-symbols-rounded">groups</span></div>
+        <div>
+          <div class="ch-name">Customer references · Music + Ring</div>
+          <div class="ch-tag">Pre-secured proof points, deployed at the right moments</div>
+        </div>
+      </div>
+      <div class="ch-grid">
+        <div class="ch-col">
+          <h5>Lined up in advance</h5>
+          <ul>
+            <li>Music eng lead — warm intro path</li>
+            <li>Ring eng lead — warm intro path</li>
+            <li>Both available for 30-min ref call</li>
+            <li>Pre-approved quotes for content use</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Used where</h5>
+          <ul>
+            <li>Amit briefing doc (Music quote)</li>
+            <li>Vince migration brief (Ring eng quote)</li>
+            <li>Summit dinner — Music in person</li>
+            <li>Influ2 Tier 1 creative</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Owners</h5>
+          <ul>
+            <li>Customer marketing secures rights</li>
+            <li>Shab confirms availability windows</li>
+            <li>Robyn schedules each ref call</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT DROPS -->
+    <div class="section-header">
+      <div class="num">04 · Content production</div>
+      <h2>8 custom assets to build</h2>
+      <p class="lead">Each asset has a single owner, a clear use case, and a target ship date.</p>
+    </div>
+
+    <div class="drops">
+      <div class="drop">
+        <span class="d-type brief">Brief</span>
+        <h4>Refmarkers → Amplitude migration brief</h4>
+        <p class="d-desc">Taxonomy mapping, identity stitching, 3 use cases standable in 2 weeks. For Vince + WFM eng.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: SE + Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 5/28</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type doc">Doc</span>
+        <h4>Amit briefing doc · 2-pager</h4>
+        <p class="d-desc">How Music + Ring built the flywheel. WFM-specific RACI. Procurement path via existing Amazon MSA.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: Robyn + Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 6/9</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type doc">Doc</span>
+        <h4>POC scope one-pager</h4>
+        <p class="d-desc">Synthetic data approach, success criteria, what readout will show. Internal alignment tool.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: Jay + Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 5/30</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type doc">Doc</span>
+        <h4>Web Labs + Amplitude reference architecture</h4>
+        <p class="d-desc">How coexistence works. Stamped with Music + Ring as proof. For Vince's eng team.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: SE</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 6/5</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type exp">Experience</span>
+        <h4>Summit demo trailer · 60-sec video</h4>
+        <p class="d-desc">Pre-summit hype video for Tier 1/3. Ted on camera, Music branding featured.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: Shab + brand</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 6/30</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type exp">Experience</span>
+        <h4>Summit landing page</h4>
+        <p class="d-desc">Custom Amplitude × Amazon MarTech Summit page. Demo info, dinner RSVP, post-event recap.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: Web + Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 6/20</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type dm">Direct mail</span>
+        <h4>Vince personalized gift</h4>
+        <p class="d-desc">Sustainability-led gift selected via ABX Dossier profile. QR code on the tag links to the digital migration brief PDF. Times to land 1 week before the 9/1 proposal review — Vince is the technical influence point with DMs.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 8/25</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type dm">Direct mail</span>
+        <h4>Amit personalized gift</h4>
+        <p class="d-desc">Sustainability-led gift selected via ABX Dossier profile. QR code links to the digital exec brief — Music + Ring playbook.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 6/16</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type event">Event</span>
+        <h4>Post-summit recap content kit</h4>
+        <p class="d-desc">Session video clip, recap blog, LinkedIn carousel, 5-email Tier 3 nurture series.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Ship: 7/14</span>
+        </div>
+      </div>
+      <div class="drop">
+        <span class="d-type event">Event</span>
+        <h4>September procurement dinner</h4>
+        <p class="d-desc">8-person 1:1 dinner with WFM + Amazon procurement. Music/Ring eng lead shares "how the paper worked." Removes procurement friction in person, 3 weeks before close.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: Field events + Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Host: week of 9/22</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAIGN CALENDAR -->
+    <div class="section-header">
+      <div class="num">05 · The marketing calendar</div>
+      <h2>Week by week — what ships and when</h2>
+      <p class="lead">Marketing activity mapped against the MAP. Each row is something marketing delivers on a specific date.</p>
+    </div>
+
+    <div class="calendar">
+      <div class="cal-row header">
+        <div>Week of</div>
+        <div>Marketing activity</div>
+        <div>Channels</div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">May 20<div class="sub">Week 1</div></div>
+        <div class="cal-content">
+          <h5>Campaign launch · Tier 1 Influ2 live</h5>
+          <p>Tier 1 Influ2 activates with Ad A creative. SE + Shab begin migration brief production. Procurement contact confirmation in motion.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2 T1</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">May 26<div class="sub">Week 2</div></div>
+        <div class="cal-content">
+          <h5>Migration brief delivered to Vince</h5>
+          <p>Refmarkers → Amplitude migration brief ships digitally to Vince and the WFM eng team. Supports the pre-POC technical groundwork Jay is doing with Vince + Manmeet during Josh's PTO.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">article</span>Content</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2 T1</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Jun 2<div class="sub">Week 3</div></div>
+        <div class="cal-content">
+          <h5>Web Labs ref arch ships internally</h5>
+          <p>Internal Web Labs reference architecture finalized for Vince's team. Influ2 Tier 1 swaps to Ad B (summit teaser).</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">article</span>Content</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2 T1</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Jun 8<div class="sub">Week 4</div></div>
+        <div class="cal-content">
+          <h5>POC effective kickoff · Josh returns</h5>
+          <p>Marketing supports POC kickoff moment. Tier 2 + Tier 3 Influ2 activate as Josh is back driving the broader buy-in. Amit briefing doc ready for Robyn to deploy this week.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2 all tiers</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">article</span>Content</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Jun 16<div class="sub">Week 5</div></div>
+        <div class="cal-content">
+          <h5>Amit gift lands · summit landing page goes live</h5>
+          <p>Personalized gift to Amit via ABX Dossier profile, QR to digital exec brief (Music + Ring playbook). Summit landing page launches with demo info and dinner RSVP form.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">redeem</span>Gift + QR</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">language</span>Web</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Jun 23<div class="sub">Week 6</div></div>
+        <div class="cal-content">
+          <h5>Summit invitations go out · POC mid-execution</h5>
+          <p>Tier 3 marketing audience receives summit invitation flow. Dinner invites to named guest list. POC running in parallel — Vince + Manmeet executing.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">mail</span>Invites</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Jun 30<div class="sub">Week 7</div></div>
+        <div class="cal-content">
+          <h5>Demo trailer drops · final summit ramp</h5>
+          <p>60-sec demo trailer goes live on social and to summit registrants. Influ2 Tier 1 swaps to summit creative. POC continuing.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">smart_display</span>Video</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">share</span>Social</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
+        </div>
+      </div>
+
+      <div class="cal-row summit-row">
+        <div class="cal-date">Jul 7–9<div class="sub">SUMMIT</div></div>
+        <div class="cal-content">
+          <h5>Amazon MarTech Summit · Seattle</h5>
+          <p>Ted + Elizabeth main stage demo while POC is mid-flight. Booth coverage. <strong>WFM + Music working dinner night 1</strong>. Live coverage on LinkedIn from Shab.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">groups</span>In-person</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">share</span>Social live</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">restaurant</span>Dinner</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Jul 14<div class="sub">Week 9</div></div>
+        <div class="cal-content">
+          <h5>Post-summit content blitz</h5>
+          <p>Recap blog, LinkedIn carousel, session clip distribution. Tier 3 nurture series begins. POC moves toward 7/20 completion.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">article</span>Content</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">mail</span>Nurture</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">share</span>Social</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Jul 21 – Jul 28<div class="sub">Weeks 10–11</div></div>
+        <div class="cal-content">
+          <h5>POC complete · readout moment</h5>
+          <p><strong>POC ends 7/20 · readout 7/27.</strong> Marketing supports readout with celebration moment. Tier 3 nurture continues — proof-point content lands.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">celebration</span>Moment</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">mail</span>Nurture</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Aug 4 – Aug 11<div class="sub">Weeks 12–13</div></div>
+        <div class="cal-content">
+          <h5>Business case support</h5>
+          <p>Proposal-supporting one-pagers ready for Robyn's <strong>8/10 business case review with Amit</strong>. Influ2 maintains. Nurture continues.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">article</span>Content</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">mail</span>Nurture</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Aug 18<div class="sub">Week 14</div></div>
+        <div class="cal-content">
+          <h5>Proposal-window air cover</h5>
+          <p>Robyn's <strong>8/20 proposal drop</strong>. Influ2 maintains pressure on the named buying group. Nurture wraps for Tier 3.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Aug 25<div class="sub">Week 15</div></div>
+        <div class="cal-content">
+          <h5>Vince gift lands · pre-DM review moment</h5>
+          <p>Personalized gift to Vince via ABX Dossier profile, QR linking to digital migration brief. Lands 1 week before the <strong>9/1 proposal review with DMs</strong> — Vince is the technical influence point in that committee.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">redeem</span>Gift + QR</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Sep 1 – Sep 15<div class="sub">Weeks 16–17</div></div>
+        <div class="cal-content">
+          <h5>Procurement-window air cover</h5>
+          <p>Influ2 stays on at reduced cadence. Air cover through proposal DM review (9/1) and vendor decision (9/15).</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2 maintenance</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Sep 22<div class="sub">Week 18</div></div>
+        <div class="cal-content">
+          <h5>1:1 procurement dinner · de-risk paper before close</h5>
+          <p>8-person curated dinner with WFM + Amazon procurement. Music or Ring eng lead joins to share "how the paper worked." Last in-person moment to remove friction before the close sprint. Lands between TPS review and procurement finalization.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">restaurant</span>Dinner</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">groups</span>In-person</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
+        </div>
+      </div>
+
+      <div class="cal-row">
+        <div class="cal-date">Sep 29 – Oct 6<div class="sub">Weeks 19–20</div></div>
+        <div class="cal-content">
+          <h5>Tier 1 only · close-week posture</h5>
+          <p>Tier 2 and 3 wind down. Tier 1 stays on with celebration-ready creative. Win report drafted in parallel.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2 T1</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">edit_note</span>Win prep</span>
+        </div>
+      </div>
+
+      <div class="cal-row close-row">
+        <div class="cal-date">Oct 13–15<div class="sub">CLOSE</div></div>
+        <div class="cal-content">
+          <h5>Signature week · marketing rights activated</h5>
+          <p><strong>Signature 10/15.</strong> Win report published internally. Marketing rights paperwork executed. Reference development plan kicks off.</p>
+        </div>
+        <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">emoji_events</span>Win</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">verified</span>Rights</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMIT DEEP DIVE -->
+    <div class="section-header">
+      <div class="num">06 · The summit moment</div>
+      <h2>Amazon MarTech Summit · marketing playbook</h2>
+    </div>
+
+    <div class="summit-card">
+      <div class="summit-glow"></div>
+      <div class="summit-glow-2"></div>
+      <div class="summit-content">
+        <div class="eyebrow">July 7–9 · Seattle · mid-POC moment</div>
+        <h3>Where every marketing channel converges.</h3>
+        <p class="summit-date">POC kicks off 6/8 and runs through 7/20. Summit lands in the middle of execution — the perfect mid-POC proof acceleration moment.</p>
+
+        <div class="summit-talk">
+          <div class="talk-eyebrow">Confirmed</div>
+          <div class="talk-title">From fragmented signals to full-funnel clarity</div>
+          <div class="talk-speakers"><strong>Ted Sfikas</strong>, Field CTO, Amplitude · <strong>Elizabeth Thach</strong>, Amazon Music Marketing · Main stage demo · AI-accelerated campaign performance</div>
+        </div>
+
+        <div class="summit-mkt-grid">
+          <div class="summit-mkt">
+            <h6>Pre-summit · 3 weeks out</h6>
+            <p>Landing page live, demo trailer dropped, Tier 1 + Tier 3 Influ2 swap to summit creative, named invites and dinner RSVPs out.</p>
+          </div>
+          <div class="summit-mkt">
+            <h6>Pre-summit · 1 week out</h6>
+            <p>Trailer hits paid social. Shab posts thought leadership tied to the session theme. Final dinner agenda locked.</p>
+          </div>
+          <div class="summit-mkt">
+            <h6>During · Day 1</h6>
+            <p>Ted + Elizabeth demo. Booth coverage with eng-friendly demo loop. WFM + Music working dinner with curated agenda.</p>
+          </div>
+          <div class="summit-mkt">
+            <h6>During · Day 2–3</h6>
+            <p>1:1s with Amit, Josh, Vince scheduled. Booth demo on repeat. Live LinkedIn coverage from Shab.</p>
+          </div>
+          <div class="summit-mkt">
+            <h6>Post-summit · Week 1</h6>
+            <p>Session clip distributed, recap blog published, LinkedIn carousel goes live, Tier 3 nurture series begins.</p>
+          </div>
+          <div class="summit-mkt">
+            <h6>Post-summit · Weeks 2–3</h6>
+            <p>POC continues. Content supports the 7/27 POC readout and lays the groundwork for Robyn's 8/10 business case review with Amit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMITTEE COVERAGE -->
+    <div class="section-header">
+      <div class="num">07 · How each contact gets surrounded</div>
+      <h2>Coverage map by contact</h2>
+      <p class="lead">Marketing touches each member of the buying committee through specific channels. No one is left to the sales motion alone.</p>
+    </div>
+
+    <div class="coverage">
+      <div class="cov-row header">
+        <div>Contact</div>
+        <div>Marketing touchpoints</div>
+        <div>Goal</div>
+      </div>
+      <div class="cov-row">
+        <div class="cov-person">
+          <div class="name">Amit Roseman</div>
+          <div class="role">VP Product · EB</div>
+        </div>
+        <div class="cov-touch">Influ2 Tier 1 always-on · Briefing doc (6/9) · Personalized gift + QR (6/16) · Summit dinner (7/7) · Procurement dinner (9/22) · Music ref call coordination</div>
+        <div class="cov-touch"><strong>Flip preferred vendor flag to Yes</strong> by 8/10 business case review</div>
+      </div>
+      <div class="cov-row">
+        <div class="cov-person">
+          <div class="name">Josh Williams</div>
+          <div class="role">Champion</div>
+        </div>
+        <div class="cov-touch">Influ2 Tier 1 always-on · Summit dinner (7/7) · 1:1 at summit · Post-summit recap shared first · Procurement dinner (9/22)</div>
+        <div class="cov-touch">Equip with internal-selling ammo</div>
+      </div>
+      <div class="cov-row">
+        <div class="cov-person">
+          <div class="name">Vince Lutton</div>
+          <div class="role">Tech champion</div>
+        </div>
+        <div class="cov-touch">Influ2 Tier 1 · Migration brief (5/26) · Web Labs ref arch · Booth time at summit · Ring eng ref call · Personalized gift + QR (8/25) · Procurement dinner (9/22)</div>
+        <div class="cov-touch">Make the technical answer obvious</div>
+      </div>
+      <div class="cov-row">
+        <div class="cov-person">
+          <div class="name">Ian Biss</div>
+          <div class="role">L8 Marketing VP</div>
+        </div>
+        <div class="cov-touch">Tier 3 Influ2 (marketing audience) · Summit invitation as marketing leader · Direct invitation to dinner if confirmed</div>
+        <div class="cov-touch">Convert from stakeholder to advocate</div>
+      </div>
+      <div class="cov-row">
+        <div class="cov-person">
+          <div class="name">Kevin Lloyd</div>
+          <div class="role">L8 Consumer-facing Grocery Tech</div>
+        </div>
+        <div class="cov-touch">Tier 2 Influ2 (product audience) · Tech-focused content delivery via Vince · Booth invitation at summit</div>
+        <div class="cov-touch">Cover with tech proof, not commercial pitch</div>
+      </div>
+      <div class="cov-row">
+        <div class="cov-person">
+          <div class="name">Manmeet Mulcocha</div>
+          <div class="role">Tech support · WFM eng</div>
+        </div>
+        <div class="cov-touch">Influ2 Tier 2 (product audience) · Migration brief (5/26) · Web Labs ref arch · Booth time at summit · Procurement dinner (9/22)</div>
+        <div class="cov-touch">Implementation partner — keep activated</div>
+      </div>
+      <div class="cov-row">
+        <div class="cov-person">
+          <div class="name">Amazon procurement</div>
+          <div class="role">Confirmed lead TBD</div>
+        </div>
+        <div class="cov-touch"><strong>Procurement dinner (9/22)</strong> — primary touchpoint · Music/Ring eng lead shares "how the paper worked" · de-risk MSA + TPS conversation in person</div>
+        <div class="cov-touch">Remove procurement friction before close</div>
+      </div>
+      <div class="cov-row">
+        <div class="cov-person">
+          <div class="name">~55 broader stakeholders</div>
+          <div class="role">Tier 2 + Tier 3 audience</div>
+        </div>
+        <div class="cov-touch">Always-on Influ2 · Summit invitation flow · Post-summit nurture · WFM landing page</div>
+        <div class="cov-touch">Bottom-up validation when buying group discusses internally</div>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="section-header">
+      <div class="num">08 · How we measure marketing</div>
+      <h2>Marketing KPIs to track</h2>
+      <p class="lead">Marketing's contribution to this deal isn't soft. These are the numbers Shab brings to the deal review every two weeks.</p>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="num">3</div><div class="label">Engagement rate · T1</div><div class="sub">Named contacts clicking Influ2 ≥3x by 7/27</div></div>
+      <div class="kpi violet"><div class="num">15+</div><div class="label">Summit registrations</div><div class="sub">From WFM + Amazon Grocery org</div></div>
+      <div class="kpi lilac"><div class="num">2</div><div class="label">Curated dinners</div><div class="sub">Summit (7/7) + procurement (9/22) hosted</div></div>
+      <div class="kpi pink"><div class="num">1</div><div class="label">Reference rights</div><div class="sub">Marketing rights secured at signature</div></div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <h4>Marketing dependencies</h4>
+        <ul>
+          <li>Brand team review on landing page + gift design</li>
+          <li>Customer marketing locks Music + Ring reference rights</li>
+          <li>Field events confirms Seattle dinner venue by 6/9</li>
+          <li>Field events confirms procurement dinner venue by 8/25</li>
+          <li>Procurement contact confirmed before 9/22 dinner invite goes out</li>
+          <li>Robyn approves Tier 1 creative before May 20 launch</li>
+        </ul>
+      </div>
+      <div>
+        <h4>What I'll bring to deal reviews</h4>
+        <ul>
+          <li>Bi-weekly Influ2 engagement scorecard by tier</li>
+          <li>Summit registration tracking + WFM attendee names</li>
+          <li>Content drop status against ship dates</li>
+          <li>Reference call activation count + outcomes</li>
+          <li>Procurement dinner confirmation list as 9/22 approaches</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ====================== POST-SALES ====================== -->
+  <div class="tab-panel" id="postsales">
+
+    <div class="hero post-sales-hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-content">
+        <div class="logo-placeholder">AMPLITUDE LOGO</div>
+        <!-- TODO: Replace with official Amplitude logo from brand.amplitude.com -->
+        <div class="eyebrow">Post-sales marketing plan</div>
+        <h1>The flywheel<br><span class="accent">starts spinning.</span></h1>
+        <p class="hero-sub">After Oct 15, marketing's job shifts. Turn WFM into the proof point that powers every other Amazon Grocery conversation — and the campaign that warms up the next expansion deal.</p>
+        <div class="hero-meta">
+          <div class="meta-item"><div class="label">Kickoff</div><div class="value blue">Oct 22, 2026</div></div>
+          <div class="meta-item"><div class="label">First reference moment</div><div class="value">Q2 2027</div></div>
+          <div class="meta-item"><div class="label">Expansion target</div><div class="value">2x renewal coverage</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="remit">
+      <div class="remit-label">Post-sales marketing remit</div>
+      <div class="remit-headline">CS owns adoption. Robyn owns expansion pipeline. <strong>Marketing owns reference development</strong> — turning the win into content, the customer into a public proof point, and the proof point into the campaign that opens the next door.</div>
+    </div>
+
+    <div class="section-header">
+      <div class="num">01 · Reference development arc</div>
+      <h2>From signed to spotlighted</h2>
+      <p class="lead">The reference asset roadmap. Each artifact has a target ship date and a downstream use.</p>
+    </div>
+
+    <div class="stage">
+      <div class="stage-head">
+        <span class="stage-period">Days 0–30 · Foundation</span>
+        <h3>Set up the reference machine</h3>
+      </div>
+      <p class="stage-desc">Marketing rights activated at signature. CS kickoff captured for future content. Internal win report distributed. Champion story interview scheduled with Josh.</p>
+      <div class="stage-drops">
+        <div class="stage-drop"><span class="material-symbols-rounded">verified</span><div><strong>Marketing rights</strong> — confirmed in order form, signed by Amit</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">edit_note</span><div><strong>Internal win report</strong> — distributed across Amplitude GTM</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">mic</span><div><strong>Champion interview</strong> — 30 min with Josh, recorded</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">photo_camera</span><div><strong>Photoshoot prep</strong> — WFM team headshots for content</div></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-head">
+        <span class="stage-period">Days 31–90 · First wins</span>
+        <h3>Capture the proof in real time</h3>
+      </div>
+      <p class="stage-desc">As CS lands the homepage funnel + cart abandonment + PM dashboards, marketing documents each win for future content. First quote-worthy moments captured.</p>
+      <div class="stage-drops">
+        <div class="stage-drop"><span class="material-symbols-rounded">analytics</span><div><strong>Win story #1</strong> — first PM-led decision without a ticket</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">quote</span><div><strong>Pull quotes</strong> — 5+ usable customer quotes captured</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">data_object</span><div><strong>Metrics inventory</strong> — adoption + impact data captured</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">people</span><div><strong>WFM reference team</strong> — 3 named references identified</div></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-head">
+        <span class="stage-period">Months 4–6 · Activate</span>
+        <h3>Ship the case study and the campaign</h3>
+      </div>
+      <p class="stage-desc">Public case study drops. WFM logo lands on the customer page. First reference call rotation activates. Amazon Grocery campaign launches using WFM as the proof point.</p>
+      <div class="stage-drops">
+        <div class="stage-drop"><span class="material-symbols-rounded">article</span><div><strong>Public case study</strong> — published Q1 2027</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">campaign</span><div><strong>Amazon Grocery campaign</strong> — launched with WFM proof</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">handshake</span><div><strong>Reference call rotation</strong> — Music + Ring + WFM available</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">storefront</span><div><strong>Customer page logo</strong> — WFM live on amplitude.com</div></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-head">
+        <span class="stage-period">Months 7–12 · Spotlight</span>
+        <h3>Make WFM the talk of the conference circuit</h3>
+      </div>
+      <p class="stage-desc">Josh or Amit on stage at Amplify or a partner event. Webinar with WFM Marketing leadership. EBR-driven expansion pipeline launches into Fresh and WFM Mktg with WFM as proof.</p>
+      <div class="stage-drops">
+        <div class="stage-drop"><span class="material-symbols-rounded">record_voice_over</span><div><strong>Conference talk</strong> — Josh or Amit on stage</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">videocam</span><div><strong>Webinar</strong> — WFM × Amplitude live</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">expand</span><div><strong>Fresh + WFM Mktg campaign</strong> — expansion pipeline launches</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">autorenew</span><div><strong>Renewal narrative</strong> — story-led, not commercial</div></div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="num">02 · Post-sales KPIs</div>
+      <h2>What good looks like</h2>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="num">5+</div><div class="label">Content assets</div><div class="sub">Case study, video, blog, talk, webinar by Q3 2027</div></div>
+      <div class="kpi violet"><div class="num">10+</div><div class="label">Reference calls</div><div class="sub">WFM as reference for other Amazon prospects</div></div>
+      <div class="kpi lilac"><div class="num">1</div><div class="label">Conference moment</div><div class="sub">Josh or Amit on a public stage by Q3 2027</div></div>
+      <div class="kpi pink"><div class="num">2x</div><div class="label">Expansion pipeline</div><div class="sub">Coverage on renewal · driven by WFM story</div></div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <h4>Post-sales marketing dependencies</h4>
+        <ul>
+          <li>Marketing rights scope locked in the order form (pre-close)</li>
+          <li>CS commitment to flag win moments in real time</li>
+          <li>Customer marketing leads case study production</li>
+          <li>Brand team availability for video shoot in Austin</li>
+        </ul>
+      </div>
+      <div>
+        <h4>The compounding plays</h4>
+        <ul>
+          <li>WFM win becomes Tier 1 content for broader Amazon Grocery campaign</li>
+          <li>Reference rotation with Music + Ring + WFM unlocks other Amazon properties</li>
+          <li>Renewal motion runs through the story, not the spreadsheet</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function switchTab(panel, btn) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(panel).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
