@@ -251,6 +251,18 @@
 
   /* POST-SALES */
   .post-sales-hero { background: linear-gradient(135deg, #001A4F 0%, #000 100%); }
+
+  /* PRIMARY GOAL ARC */
+  .primary-goal { margin: 28px 0 36px; padding: 22px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; backdrop-filter: blur(6px); }
+  .pg-label { font-size: 11px; font-weight: 600; color: #FFB100; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 16px; }
+  .pg-arc { display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr; gap: 0; align-items: center; }
+  .pg-step { padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; min-height: 100px; display: flex; flex-direction: column; justify-content: center; }
+  .pg-step.pg-final { background: linear-gradient(135deg, rgba(255,177,0,0.18) 0%, rgba(255,125,120,0.18) 100%); border-color: rgba(255,177,0,0.4); }
+  .pg-num { width: 24px; height: 24px; border-radius: 50%; background: #4083FF; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+  .pg-step.pg-final .pg-num { background: #FFB100; color: #000; }
+  .pg-text { font-size: 15px; font-weight: 600; color: #fff; line-height: 1.3; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .pg-sub { font-size: 11px; color: rgba(255,255,255,0.65); line-height: 1.4; }
+  .pg-arrow { color: rgba(255,255,255,0.35); text-align: center; font-size: 18px; font-weight: 300; }
   .stage { background: #fff; border-radius: 16px; padding: 24px 28px; border: 1px solid #D5D9E0; margin-bottom: 14px; }
   .stage-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 10px; }
   .stage-period { font-size: 11px; font-weight: 600; color: #0052F2; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -277,6 +289,9 @@
     .kpis { grid-template-columns: 1fr 1fr; }
     .drops, .ad-copy-grid, .stage-drops, .summit-mkt-grid { grid-template-columns: 1fr; }
     .audience-row, .cal-row, .cov-row, .channel-detail .ch-grid, .footer { grid-template-columns: 1fr; gap: 12px; }
+    .sample-card .s-body { grid-template-columns: 1fr; gap: 18px; }
+    .pg-arc { grid-template-columns: 1fr; gap: 8px; }
+    .pg-arrow { transform: rotate(90deg); padding: 4px 0; }
   }
 </style>
 </head>
@@ -457,7 +472,7 @@
           <div class="pulse-cell pc-off">—</div>
           <div class="pulse-cell pc-event">Summit</div>
           <div class="pulse-cell pc-off">—</div>
-          <div class="pulse-cell pc-off">—</div>
+          <div class="pulse-cell pc-event">EBC</div>
           <div class="pulse-cell pc-event">Dinner</div>
           <div class="pulse-cell pc-off">—</div>
         </div>
@@ -814,6 +829,48 @@
 
     <div class="channel-detail">
       <div class="ch-header">
+        <div class="ch-icon"><span class="material-symbols-rounded">apartment</span></div>
+        <div>
+          <div class="ch-name">Executive Briefing Center · WFM @ Amplitude SF HQ · week of 8/18</div>
+          <div class="ch-tag">Half-day immersive · proposal-week proof moment</div>
+        </div>
+      </div>
+      <div class="ch-grid">
+        <div class="ch-col">
+          <h5>The guest list</h5>
+          <ul>
+            <li>WFM: Amit, Josh, Vince</li>
+            <li>Optional: Ian Biss + Kevin Lloyd if travelable</li>
+            <li>Amplitude: Robyn, Jay, Shab</li>
+            <li>Exec sponsor: Spenser Skates or Field CTO</li>
+            <li>Customer reference panel: Music + Ring</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>The structured moment</h5>
+          <ul>
+            <li>Amplitude exec briefing on platform roadmap</li>
+            <li>Live customer panel — Music + Ring playbooks</li>
+            <li>Deep-dive demo tailored to WFM use cases</li>
+            <li>Working session on production rollout plan</li>
+            <li>Goal: cement the proposal narrative pre-9/1 DM review</li>
+          </ul>
+        </div>
+        <div class="ch-col">
+          <h5>Owners</h5>
+          <ul>
+            <li>EBC team: agenda + facilitation</li>
+            <li>Field events: logistics + travel coordination</li>
+            <li>Customer marketing: ref panel coordination</li>
+            <li>Robyn: invite approval + exec alignment</li>
+            <li>Shab: WFM-specific personalization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-detail">
+      <div class="ch-header">
         <div class="ch-icon"><span class="material-symbols-rounded">article</span></div>
         <div>
           <div class="ch-name">Content drops · custom assets timed to MAP</div>
@@ -987,6 +1044,15 @@
           <span><span class="material-symbols-rounded">calendar_today</span>Host: week of 9/22</span>
         </div>
       </div>
+      <div class="drop">
+        <span class="d-type event">Event</span>
+        <h4>Executive Briefing Center · SF HQ</h4>
+        <p class="d-desc">Half-day immersive at Amplitude HQ for WFM exec team. Customer panel with Music + Ring, deep-dive demo, working session on production rollout. Pre-DM review moment.</p>
+        <div class="d-meta">
+          <span><span class="material-symbols-rounded">person</span>Owner: EBC team + Shab</span>
+          <span><span class="material-symbols-rounded">calendar_today</span>Host: week of 8/18</span>
+        </div>
+      </div>
     </div>
 
     <!-- CAMPAIGN CALENDAR -->
@@ -1143,10 +1209,12 @@
       <div class="cal-row">
         <div class="cal-date">Aug 18<div class="sub">Week 14</div></div>
         <div class="cal-content">
-          <h5>Proposal-window air cover</h5>
-          <p>Robyn's <strong>8/20 proposal drop</strong>. Influ2 maintains pressure on the named buying group. Nurture wraps for Tier 3.</p>
+          <h5>EBC at Amplitude SF HQ · proposal-week proof moment</h5>
+          <p>Half-day Executive Briefing Center experience for WFM team — Amit, Josh, Vince + VP stakeholders if available. Exec briefing, customer panel with Music + Ring, deep-dive demo. Cements the narrative ahead of Robyn's <strong>8/20 proposal drop</strong> and <strong>9/1 DM review</strong>.</p>
         </div>
         <div class="cal-channel">
+          <span class="ch-pill"><span class="material-symbols-rounded">apartment</span>EBC</span>
+          <span class="ch-pill"><span class="material-symbols-rounded">groups</span>In-person</span>
           <span class="ch-pill"><span class="material-symbols-rounded">ads_click</span>Influ2</span>
         </div>
       </div>
@@ -1279,7 +1347,7 @@
           <div class="name">Amit Roseman</div>
           <div class="role">VP Product · EB</div>
         </div>
-        <div class="cov-touch">Influ2 Tier 1 always-on · Briefing doc (6/9) · Personalized gift + QR (6/16) · Summit dinner (7/7) · Procurement dinner (9/22) · Music ref call coordination</div>
+        <div class="cov-touch">Influ2 Tier 1 always-on · Briefing doc (6/9) · Personalized gift + QR (6/16) · Summit dinner (7/7) · EBC at SF HQ (8/18) · Procurement dinner (9/22) · Music ref call coordination</div>
         <div class="cov-touch"><strong>Flip preferred vendor flag to Yes</strong> by 8/10 business case review</div>
       </div>
       <div class="cov-row">
@@ -1287,7 +1355,7 @@
           <div class="name">Josh Williams</div>
           <div class="role">Champion</div>
         </div>
-        <div class="cov-touch">Influ2 Tier 1 always-on · Summit dinner (7/7) · 1:1 at summit · Post-summit recap shared first · Procurement dinner (9/22)</div>
+        <div class="cov-touch">Influ2 Tier 1 always-on · Summit dinner (7/7) · 1:1 at summit · Post-summit recap shared first · EBC at SF HQ (8/18) · Procurement dinner (9/22)</div>
         <div class="cov-touch">Equip with internal-selling ammo</div>
       </div>
       <div class="cov-row">
@@ -1295,7 +1363,7 @@
           <div class="name">Vince Lutton</div>
           <div class="role">Tech champion</div>
         </div>
-        <div class="cov-touch">Influ2 Tier 1 · Migration brief (5/26) · Web Labs ref arch · Booth time at summit · Ring eng ref call · Personalized gift + QR (8/25) · Procurement dinner (9/22)</div>
+        <div class="cov-touch">Influ2 Tier 1 · Migration brief (5/26) · Web Labs ref arch · Booth time at summit · Ring eng ref call · EBC at SF HQ (8/18) · Personalized gift + QR (8/25) · Procurement dinner (9/22)</div>
         <div class="cov-touch">Make the technical answer obvious</div>
       </div>
       <div class="cov-row">
@@ -1303,7 +1371,7 @@
           <div class="name">Ian Biss</div>
           <div class="role">L8 Marketing VP</div>
         </div>
-        <div class="cov-touch">Tier 3 Influ2 (marketing audience) · Summit invitation as marketing leader · Direct invitation to dinner if confirmed</div>
+        <div class="cov-touch">Tier 3 Influ2 (marketing audience) · Summit invitation as marketing leader · Direct invitation to dinner if confirmed · EBC at SF HQ (8/18) if travel works</div>
         <div class="cov-touch">Convert from stakeholder to advocate</div>
       </div>
       <div class="cov-row">
@@ -1311,7 +1379,7 @@
           <div class="name">Kevin Lloyd</div>
           <div class="role">L8 Consumer-facing Grocery Tech</div>
         </div>
-        <div class="cov-touch">Tier 2 Influ2 (product audience) · Tech-focused content delivery via Vince · Booth invitation at summit</div>
+        <div class="cov-touch">Tier 2 Influ2 (product audience) · Tech-focused content delivery via Vince · Booth invitation at summit · EBC at SF HQ (8/18) if travel works</div>
         <div class="cov-touch">Cover with tech proof, not commercial pitch</div>
       </div>
       <div class="cov-row">
@@ -1350,7 +1418,7 @@
     <div class="kpis">
       <div class="kpi"><div class="num">3</div><div class="label">Engagement rate · T1</div><div class="sub">Named contacts clicking Influ2 ≥3x by 7/27</div></div>
       <div class="kpi violet"><div class="num">15+</div><div class="label">Summit registrations</div><div class="sub">From WFM + Amazon Grocery org</div></div>
-      <div class="kpi lilac"><div class="num">2</div><div class="label">Curated dinners</div><div class="sub">Summit (7/7) + procurement (9/22) hosted</div></div>
+      <div class="kpi lilac"><div class="num">3</div><div class="label">In-person moments</div><div class="sub">Summit dinner (7/7) + EBC (8/18) + procurement dinner (9/22)</div></div>
       <div class="kpi pink"><div class="num">1</div><div class="label">Reference rights</div><div class="sub">Marketing rights secured at signature</div></div>
     </div>
 
@@ -1361,6 +1429,7 @@
           <li>Brand team review on landing page + gift design</li>
           <li>Customer marketing locks Music + Ring reference rights</li>
           <li>Field events confirms Seattle dinner venue by 6/9</li>
+          <li>EBC team confirms 8/18 SF HQ slot + exec sponsor by 7/15</li>
           <li>Field events confirms procurement dinner venue by 8/25</li>
           <li>Procurement contact confirmed before 9/22 dinner invite goes out</li>
           <li>Robyn approves Tier 1 creative before May 20 launch</li>
@@ -1373,6 +1442,7 @@
           <li>Summit registration tracking + WFM attendee names</li>
           <li>Content drop status against ship dates</li>
           <li>Reference call activation count + outcomes</li>
+          <li>EBC attendee confirmation list as 8/18 approaches</li>
           <li>Procurement dinner confirmation list as 9/22 approaches</li>
         </ul>
       </div>
@@ -1392,18 +1462,41 @@
         <div class="eyebrow">Post-sales marketing plan</div>
         <h1>The flywheel<br><span class="accent">starts spinning.</span></h1>
         <p class="hero-sub">After Oct 15, marketing's job shifts. Turn WFM into the proof point that powers every other Amazon Grocery conversation — and the campaign that warms up the next expansion deal.</p>
+
+        <div class="primary-goal">
+          <div class="pg-label">Primary goal</div>
+          <div class="pg-arc">
+            <div class="pg-step">
+              <div class="pg-num">1</div>
+              <div class="pg-text">Whole Foods Market</div>
+              <div class="pg-sub">Initial $500K land · Oct 15</div>
+            </div>
+            <div class="pg-arrow">→</div>
+            <div class="pg-step">
+              <div class="pg-num">2</div>
+              <div class="pg-text">All of WFM + Grocery</div>
+              <div class="pg-sub">Fresh, WFM Marketing, Grocery Tech</div>
+            </div>
+            <div class="pg-arrow">→</div>
+            <div class="pg-step pg-final">
+              <div class="pg-num">3</div>
+              <div class="pg-text">Amazon.com · Doug Herrington</div>
+              <div class="pg-sub">CEO Worldwide Amazon Stores</div>
+            </div>
+          </div>
+        </div>
+
         <div class="hero-meta">
           <div class="meta-item"><div class="label">Kickoff</div><div class="value blue">Oct 22, 2026</div></div>
           <div class="meta-item"><div class="label">First reference moment</div><div class="value">Q2 2027</div></div>
-          <div class="meta-item"><div class="label">Expansion target</div><div class="value">2x renewal coverage</div></div>
+          <div class="meta-item"><div class="label">Expansion target</div><div class="value">WFM → Grocery → Amazon Stores</div></div>
         </div>
       </div>
     </div>
 
     <div class="remit">
       <div class="remit-label">Post-sales marketing remit</div>
-      <div class="remit-headline">CS owns adoption. Robyn owns expansion pipeline. <strong>Marketing owns reference development</strong> — turning the win into content, the customer into a public proof point, and the proof point into the campaign that opens the next door.</div>
-     <div class="remit-headline"><strong></strong>Primary goal:</strong> Expand out to all of Whole Foods and Grocery and then to Amazon.com/Doug Herrington's org (CEO  Worldwide Amazon Stores)</div>
+      <div class="remit-headline">CS owns adoption. Robyn owns expansion pipeline. <strong>Marketing owns reference development</strong> — turning the WFM win into the proof point that opens doors across all of Whole Foods, all of Grocery, and ultimately Amazon.com itself.</div>
     </div>
 
     <div class="section-header">
@@ -1457,13 +1550,14 @@
     <div class="stage">
       <div class="stage-head">
         <span class="stage-period">Months 7–12 · Spotlight</span>
-        <h3>Make WFM the talk of the conference circuit</h3>
+        <h3>From WFM win to Amazon Stores opportunity</h3>
       </div>
-      <p class="stage-desc">Josh or Amit on stage at Amplify or a partner event. Webinar with WFM Marketing leadership. EBR-driven expansion pipeline launches into Fresh and WFM Mktg with WFM as proof.</p>
+      <p class="stage-desc">Josh or Amit on stage at Amplify or a partner event. Webinar with WFM Marketing leadership. EBR-driven expansion campaigns launch into Fresh, WFM Marketing, and Grocery Tech — and start warming Amazon.com / Doug Herrington's Worldwide Amazon Stores org with the WFM proof point.</p>
       <div class="stage-drops">
         <div class="stage-drop"><span class="material-symbols-rounded">record_voice_over</span><div><strong>Conference talk</strong> — Josh or Amit on stage</div></div>
         <div class="stage-drop"><span class="material-symbols-rounded">videocam</span><div><strong>Webinar</strong> — WFM × Amplitude live</div></div>
-        <div class="stage-drop"><span class="material-symbols-rounded">expand</span><div><strong>Fresh + WFM Mktg campaign</strong> — expansion pipeline launches</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">expand</span><div><strong>WFM + Grocery expansion</strong> — Fresh, WFM Mktg, Grocery Tech</div></div>
+        <div class="stage-drop"><span class="material-symbols-rounded">trending_up</span><div><strong>Amazon Stores warming</strong> — Doug Herrington's org via WFM proof</div></div>
         <div class="stage-drop"><span class="material-symbols-rounded">autorenew</span><div><strong>Renewal narrative</strong> — story-led, not commercial</div></div>
       </div>
     </div>
@@ -1494,7 +1588,8 @@
         <h4>The compounding plays</h4>
         <ul>
           <li>WFM win becomes Tier 1 content for broader Amazon Grocery campaign</li>
-          <li>Reference rotation with Music + Ring + WFM unlocks other Amazon properties</li>
+          <li>Reference rotation with Music + Ring + WFM unlocks Fresh, WFM Marketing, Grocery Tech</li>
+          <li>Doug Herrington's org (Worldwide Amazon Stores) becomes the next ABX target — WFM is the warm intro</li>
           <li>Renewal motion runs through the story, not the spreadsheet</li>
         </ul>
       </div>
